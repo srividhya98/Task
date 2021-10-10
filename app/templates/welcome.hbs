@@ -1,0 +1,17 @@
+{{#if model.welcome}}
+<div class="login">
+    <div class="message">
+        Welcome User
+    </div>
+    <div class="form-button">
+            <button type="button" onclick={{action 'checkOutUser' target=currentRoute}}> Logout</button>
+            <button type="button" class="api" onclick={{action 'getApiData' target=currentRoute}}> API Data</button>
+    </div>
+   
+</div>
+{{else}}
+<div>{{model.getData}}</div>
+<div class="form-button">
+    <button type="button" onclick={{action 'postUserData' target=currentRoute}}>Back</button>
+</div>
+{{/if}}

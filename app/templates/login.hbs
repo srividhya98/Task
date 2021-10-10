@@ -1,0 +1,29 @@
+<div class="login">
+    <div class="statement">Welcome</div>
+    <div class="inputFileds">
+        <span class="formField">
+            Email <span class="red">*</span>
+        </span>
+        <span class="inputFiled">
+            <input type="text" id="email" class={{if model.emailError "border-red" "border-grey"}} placeholder="email"/>
+        </span>
+    </div>
+    <div class="inputFileds">
+        <span class="formField">
+            Password <span class="red">*</span>
+        </span>
+        <span class="inputFiled">
+             <input type="password" id="password" class={{if model.passwordError "border-red" "border-grey"}} placeholder="password"/>
+        </span>
+    </div>
+    {{#if model.emailError}}
+    <div class="red">{{model.errorMessage}}</div>
+    {{else if model.passwordError}}
+    <div class="red">{{model.errorMessage}}</div>
+    {{/if}}
+    <div class="form-button">
+        <button type="button" onclick={{action 'checkUser' target=currentRoute}}> Login</button>
+    </div>
+</div>
+
+{{outlet}}
